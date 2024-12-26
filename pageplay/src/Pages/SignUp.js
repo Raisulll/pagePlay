@@ -222,7 +222,6 @@ export const SignUp = () => {
               alt="Element"
               src={x2412205069043541}
             />
-
             <img
               style={{ left: "-50px" }}
               className="absolute w-[373px] h-[265px] top-[485px] left-0"
