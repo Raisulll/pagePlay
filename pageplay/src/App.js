@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
+import StartingPage from "./Pages/StartingPage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <AppContent /> {/* Moved the logic inside AppContent */}
+      </BrowserRouter>
     </div>
+  );
+}
+
+function AppContent() {
+  const location = useLocation(); // Now inside the BrowserRouter context
+  const [user, setUser] = useState(localStorage.getItem("user"));
+  return (
+    <>
+      <main>
+        <Routes>
+          <Route path="/" element={<StartingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </main>
+    </>
   );
 }
 
