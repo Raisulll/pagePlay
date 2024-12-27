@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import "./App.css";
 
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import StartingPage from "./Pages/StartingPage";
+import ForgotPass from "./Pages/ForgotPass";
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function AppContent() {
           <Route path="/" element={<StartingPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/forgotPassword" element={<ForgotPass />} />
         </Routes>
       </main>
     </>
