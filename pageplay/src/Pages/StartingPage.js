@@ -63,7 +63,7 @@ export const StartingPage = () => {
         <div className="lg:w-1/2 flex justify-center relative  lg:top-[100px]">
           <img
             className="w-full lg:w-full max-h-[400px] object-contain"
-            alt="AI illustration"
+            alt="AI illustrationn"
             src={aiImage}
           />
         </div>
