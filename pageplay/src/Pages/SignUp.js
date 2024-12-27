@@ -11,6 +11,7 @@ import hide2 from "../assets/images/hide-2.png";
 import lock1 from "../assets/images/lock-1.png";
 import telephone1 from "../assets/images/telephone.png";
 import { default as user1, default as user2 } from "../assets/images/user.png";
+import userSignin1 from "../assets/images/user-signin-1.png";
 
 export const SignUp = () => {
   const [firstName, setFirstName] = useState("");
@@ -24,24 +25,32 @@ export const SignUp = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if(password !== confirmPassword){
+    if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
     navigate("/login");
-  }
+  };
 
   const handleSignIn = () => {
     navigate("/login");
-  }
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPassword((prev) => !prev);
+  };
+
+  const handleLoginClick = () => {
+    console.log("Clicked on logo");
+    navigate("/login");
+  };
+  const handleSignupClick = () => {
+    navigate("/signup");
   };
 
   return (
@@ -54,32 +63,46 @@ export const SignUp = () => {
             src={logo}
           />
 
-          <div className="absolute w-[131px] top-[30px] left-[89px] [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-[#265073] text-2xl tracking-[0] leading-[normal]">
+          <div className="absolute w-[131px] top-[30px] left-[89px] [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-[#265073] text-2xl tracking-[0] leading-[normal] cursor-pointer">
             PagePlay
+          </div>
+          <img
+            className="absolute w-[54px] h-[53px] top-[29px] left-[1438px] object-cover cursor-pointer"
+            alt="User signin"
+            src={userSignin1}
+            onClick={handleSignIn}
+          />
+          <div
+            className="absolute top-[38px] left-[1319px] [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-black text-[22px] tracking-[0] leading-[normal] cursor-pointer"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Log in
           </div>
 
           <div className="absolute w-[1532px] h-[750px] top-[7px] left-0">
             <div className="absolute w-[912px] h-[516px] top-[108px] left-[312px] bg-[#a4c0ed] rounded-[13px] overflow-hidden">
-              <div className="absolute w-[345px] top-[22px] left-[310px] [font-family:'Poppins-Bold',Helvetica] font-bold text-black text-3xl tracking-[0] leading-[normal] whitespace-nowrap">
+              <div className="absolute w-full  top-[22px] text-center [font-family:'Poppins-Bold',Helvetica] font-bold text-black text-3xl tracking-[0] leading-[normal] whitespace-nowrap">
                 Welcome to PagePlay
               </div>
 
-              <div className="absolute w-60 top-16 left-[364px] [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-black text-2xl tracking-[0] leading-[normal]">
+              <div className="absolute w-full top-16 text-center [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-black text-2xl tracking-[0] leading-[normal]">
                 Sign up to continue
               </div>
 
-              <div className="absolute w-[827px] h-[230px] top-[286px] left-0">
-                <div className="absolute w-[624px] h-[230px] top-0 left-0">
-                  <div className="absolute w-[120px] h-11 top-[115px] left-[423px] bg-[#294180] rounded-[46px]">
+              <div className="absolute w-full h-[230px] top-[286px] left-0">
+                <div className="absolute w-full h-[230px] top-0 left-0">
+                  <div className="absolute w-[100px] h-10 top-[115px] bg-[#294180] left-[410px] rounded-[50px]">
                     <div
-                      className="absolute w-[72px] top-[12px] left-[30px] [font-family:'Poppins-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-[normal] cursor-pointer"
+                      className="text-center [font-family:'Poppins-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-[normal] cursor-pointer h-[40px] pt-[10px]"
                       onClick={handleSubmit}
                     >
                       Submit
                     </div>
                   </div>
 
-                  <p className="absolute w-[279px] top-[178px] left-[345px] [font-family:'Poppins-Medium',Helvetica] font-medium text-transparent text-base tracking-[0] leading-[normal]">
+                  <p className="absolute w-full top-[178px] text-center [font-family:'Poppins-Medium',Helvetica] font-medium text-transparent text-base tracking-[0] leading-[normal]">
                     <span className="text-black">
                       Already have an account?{" "}
                     </span>
@@ -93,7 +116,7 @@ export const SignUp = () => {
                   </p>
                   {/* password */}
                   <div className="absolute w-[458px] h-[230px] top-0 left-0">
-                    <div className="absolute w-[318px] h-[54px] top-[37px] left-[140px] bg-white rounded-[40px] overflow-hidden">
+                    <div className="absolute w-[318px] h-[54px] top-[37px] left-[110px] bg-white rounded-[40px] overflow-hidden">
                       <div className="absolute top-3 left-[70px] [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-base tracking-[0] leading-[normal]"></div>
 
                       <img
@@ -124,7 +147,7 @@ export const SignUp = () => {
                   </div>
                 </div>
                 {/* confirm password */}
-                <div className="absolute w-[318px] h-[54px] top-[37px] left-[509px] bg-white rounded-[40px] overflow-hidden">
+                <div className="absolute w-[318px] h-[54px] top-[37px] left-[495px] bg-white rounded-[40px] overflow-hidden">
                   <div className="absolute top-3.5 left-[67px] [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-base tracking-[0] leading-[normal]"></div>
 
                   <img
@@ -148,7 +171,7 @@ export const SignUp = () => {
                 </div>
               </div>
               {/* Phone Number filed */}
-              <div className="absolute w-[318px] h-[55px] top-[231px] left-[509px] bg-white rounded-[40px] overflow-hidden">
+              <div className="absolute w-[318px] h-[55px] top-[231px] left-[495px] bg-white rounded-[40px] overflow-hidden">
                 <div className="absolute top-[13px] left-[68px] [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-base tracking-[0] leading-[normal]"></div>
                 <img
                   className="absolute w-[22px] h-[22px] top-4 left-[19px] object-cover"
@@ -164,7 +187,7 @@ export const SignUp = () => {
                 />
               </div>
               {/* Email */}
-              <div className="absolute w-[318px] h-[55px] top-[231px] left-[140px] bg-white rounded-[40px] overflow-hidden">
+              <div className="absolute w-[318px] h-[55px] top-[231px] left-[110px] bg-white rounded-[40px] overflow-hidden">
                 <div className="absolute top-[13px] left-[71px] [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-base tracking-[0] leading-[normal]"></div>
                 <img
                   className="absolute w-[22px] h-[22px] top-4 left-[18px] object-cover"
@@ -180,7 +203,7 @@ export const SignUp = () => {
                 />
               </div>
               {/* Last Name */}
-              <div className="absolute w-[318px] h-[54px] top-[140px] left-[509px] bg-white rounded-[40px] overflow-hidden">
+              <div className="absolute w-[318px] h-[54px] top-[140px] left-[495px] bg-white rounded-[40px] overflow-hidden">
                 <img
                   className="left-4 absolute w-[22px] h-[22px] top-[15px] object-cover"
                   alt="User"
@@ -195,7 +218,7 @@ export const SignUp = () => {
                 />
               </div>
               {/* First Name */}
-              <div className="absolute w-[318px] h-[54px] top-[140px] left-[140px] bg-white rounded-[40px] overflow-hidden">
+              <div className="absolute w-[318px] h-[54px] top-[140px] left-[110px] bg-white rounded-[40px] overflow-hidden">
                 <img
                   className="left-[18px] absolute w-[22px] h-[22px] top-[15px] object-cover"
                   alt="User"

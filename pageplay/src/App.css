@@ -1,20 +1,12 @@
-/* body{
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Georgia', serif;
+  --font-mono: 'Menlo', monospace;
+}
+
+body {
   background-color: #D4E0B4;
-} */
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  font-family: var(--font-sans);
 }
 
 .App-header {
@@ -26,17 +18,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: var(--font-serif);
 }
 
-.App-link {
-  color: #61dafb;
+.monospace {
+  font-family: var(--font-mono);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

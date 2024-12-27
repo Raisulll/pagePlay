@@ -9,6 +9,7 @@ import hide1 from "../assets/images/hide-1.png";
 import lock1 from "../assets/images/lock-1.png";
 import logo from "../assets/images/book.png";
 import hide2 from "../assets/images/hide-2.png";
+import userSignin1 from "../assets/images/user-signin-1.png";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -24,24 +25,41 @@ export const Login = () => {
   return (
     <div className="bg-[#d4e0b4] flex flex-row justify-center w-full">
       <div className="bg-[#d4e0b4] w-[1535px] h-[768px]">
-        <div className="relative w-[1532px] h-[757px] top-[11px]">
+        <div className="relative w-[1532px] h-28 top-[11px]">
           <img
-            className="absolute w-[76px] h-[90px] top-0 left-[13px] object-cover"
-            alt="Logo"
+            className="absolute w-[76px] h-[90px] top-2.5 left-4 object-cover"
+            alt="Book"
             src={logo}
           />
 
-          <div className="absolute w-[131px] top-[30px] left-[89px] font-semibold text-[#265073] text-2xl">
+          <div className="absolute w-[131px] top-[35px] left-[92px] [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-[#265073] text-2xl tracking-[0] leading-[normal]">
             PagePlay
+          </div>
+
+          <img
+            className="absolute w-[54px] h-[53px] top-[29px] left-[1438px] object-cover cursor-pointer"
+            alt="User signin"
+            src={userSignin1}
+            onClick={() => {
+              navigate("/signup");
+            }}
+          />
+          <div
+            className="absolute top-[38px] left-[1319px] [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-black text-[22px] tracking-[0] leading-[normal] cursor-pointer"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Log in
           </div>
 
           <div className="absolute w-[1532px] h-[750px] top-[7px] left-0">
             <div className="absolute w-[912px] h-[516px] top-[108px] left-[312px] bg-[#a4c0ed] rounded-[13px] overflow-hidden">
-              <div className="absolute w-[233px] top-5 left-[366px] font-bold text-black text-3xl">
+              <div className="absolute w-full text-center top-[65px] font-bold text-black text-4xl">
                 Welcome Back
               </div>
 
-              <div className="absolute w-[213px] top-[78px] left-[376px] font-semibold text-black text-2xl">
+              <div className="absolute w-full text-center top-[100px] font-semibold text-black text-2xl">
                 Login to continue
               </div>
 
@@ -74,12 +92,17 @@ export const Login = () => {
               </div>
 
               {/* Login Button */}
-              <div className="absolute w-[174px] h-[49px] top-[376px] left-[396px] bg-[#f5ffde] rounded-[46px] flex items-center justify-center">
+              <div className="absolute w-[174px] h-[49px] top-[365px] left-[396px] bg-[#f5ffde] rounded-[46px] flex items-center justify-center cursor-pointer">
                 <div className="font-medium text-black text-xl">Login</div>
               </div>
 
               {/* Forgot Password */}
-              <div className="absolute top-[425px] left-[419px] font-medium text-secondary text-[15px] underline cursor-pointer">
+              <div
+                className="absolute top-[425px] left-[419px] font-medium text-secondary text-[15px] cursor-pointer"
+                onClick={() => {
+                  navigate("/forgot-password");
+                }}
+              >
                 Forgot password
               </div>
 
@@ -100,7 +123,7 @@ export const Login = () => {
               </div>
 
               {/* Sign Up Link */}
-              <p className="absolute top-[482px] left-[403px] font-medium text-lg">
+              <p className="absolute top-[455px] left-[403px] font-medium text-lg">
                 <span className="text-black">New User? </span>
                 <span
                   className="text-[#265073] cursor-pointer"
@@ -124,7 +147,7 @@ export const Login = () => {
             />
             <img
               style={{ left: "-50px" }}
-              className="absolute w-[360px] h-[265px] top-[485px] left-0"
+              className="absolute w-[373px] h-[265px] top-[485px] left-0"
               alt="Element"
               src={x100289701}
             />
