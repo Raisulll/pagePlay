@@ -17,29 +17,38 @@ export const StartingPage = () => {
 
   return (
     <div className="bg-[#d4e0b4] min-h-screen">
-
-      {/* navigate */}
+      {/* Navigation Bar */}
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center space-x-2">
           <img className="w-12 h-12 object-cover" alt="Book" src={book1} />
           <span className="font-semibold text-[#265073] text-xl">PagePlay</span>
         </div>
+
+        {/* Responsive Search Box */}
         <form className="searchForm flex items-center">
-        <input class="h-10 bg-[#ffffff] w-[400px] px-4 rounded-l-md border-l-2 border-t-2 border-b-2 border-blue-400" type="search" placeholder="Search Book..." autocomplete="off">
-        </input>
-        <button class="h-10 bg-green-500 w-14 grid place-items-center rounded-r-md border-r-2 border-t-2 border-b-2 border-blue-400" type="submit">
+          {/* Hidden on small screens */}
+          <input
+            className="h-10 bg-[#ffffff] w-[400px] px-4 rounded-l-md border-l-2 border-t-2 border-b-2 border-blue-400 hidden md:block"
+            type="search"
+            placeholder="Search Book..."
+            autoComplete="off"
+          />
+          {/* Always visible search button */}
+          <button
+            className="h-10 bg-green-500 w-14 grid place-items-center rounded-r-md border-r-2 border-t-2 border-b-2 border-blue-400"
+            type="submit"
+          >
             <img className="w-6 h-6" src={searchImg} alt="Search Icon" />
-        </button>
+          </button>
         </form>
 
         <div className="flex items-center space-x-6">
-          <div
-            className="font-semibold text-black text-sm lg:text-lg cursor-pointer"
-          >
+          <div className="font-semibold text-black text-sm lg:text-lg cursor-pointer">
             About Us
           </div>
-          <div className="font-semibold text-black text-sm lg:text-lg cursor-pointer"
-          onClick={handleLoginClick}
+          <div
+            className="font-semibold text-black text-sm lg:text-lg cursor-pointer"
+            onClick={handleLoginClick}
           >
             Login
           </div>
@@ -52,6 +61,7 @@ export const StartingPage = () => {
         </div>
       </div>
 
+      {/* Main Content */}
       <div className="flex flex-col lg:flex-row items-center justify-between mx-4 lg:mx-20 mt-10">
         <div className="lg:w-1/2 text-center lg:text-left space-y-6 mb-10 lg:mb-0">
           <h1 className="font-extrabold text-black text-4xl lg:text-6xl leading-tight">
@@ -71,10 +81,10 @@ export const StartingPage = () => {
           </p>
         </div>
 
-        <div className="lg:w-1/2 flex justify-center relative  lg:top-[100px]">
+        <div className="lg:w-1/2 flex justify-center relative lg:top-[100px]">
           <img
             className="w-full lg:w-full max-h-[400px] object-contain"
-            alt="AI illustrationn"
+            alt="AI illustration"
             src={aiImage}
           />
         </div>
