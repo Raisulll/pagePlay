@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import x2412205069043541 from "../assets/images/24122050-6904354-1.png";
+import x2412205167789441 from "../assets/images/24122051-6778944-1.png";
 import x100289701 from "../assets/images/ai-image.svg";
 import logo from "../assets/images/book.png";
 import email2 from "../assets/images/email.png";
@@ -38,170 +39,205 @@ export const SignUp = () => {
   };
 
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+    setShowPassword((prev) => !prev);
+  };
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword((prev) => !prev);
   };
 
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword(!showConfirmPassword);
+  const handleLoginClick = () => {
+    console.log("Clicked on logo");
+    navigate("/login");
+  };
+  const handleSignupClick = () => {
+    navigate("/signup");
   };
 
   return (
-    <div className="bg-[#d4e0b4] min-h-screen flex flex-col items-center justify-center">
-      {/* Logo and Header */}
-      <div className="absolute top-5 left-5 flex items-center">
-        <img className="w-12 h-12 sm:w-16 sm:h-16 object-cover" alt="Logo" src={logo} />
-        <span className="ml-4 text-lg sm:text-xl font-semibold text-[#265073]">
-          PagePlay
-        </span>
-      </div>
+    <div className="bg-[#d4e0b4] flex flex-row justify-center w-full">
+      <div className="bg-[#d4e0b4] w-[1535px] h-[768px]">
+        <div className="relative w-[1532px] h-[757px] top-[11px]">
+          <img
+            className="absolute w-[76px] h-[90px] top-0 left-[13px] object-cover"
+            alt="Logo"
+            src={logo}
+          />
 
-      {/* User Sign-In Button */}
-      <div className="absolute top-5 right-5 flex items-center space-x-2 sm:space-x-4">
-        <span
-          className="text-sm sm:text-lg font-semibold text-black cursor-pointer"
-          onClick={handleSignIn}
-        >
-          Log in
-        </span>
-        <img
-          className="w-8 h-8 sm:w-10 sm:h-10 object-cover cursor-pointer"
-          alt="User Signin"
-          src={userSignin1}
-          onClick={handleSignIn}
-        />
-      </div>
-
-      {/* Sign-Up Form */}
-      <div className="w-full max-w-md lg:max-w-4xl mx-auto px-4">
-        <div className="bg-[#a4c0ed] p-6 sm:p-8 rounded-lg shadow-lg">
-          <h1 className="text-center text-xl sm:text-2xl font-bold text-black">
-            Welcome to PagePlay
-          </h1>
-          <h2 className="text-center text-lg sm:text-xl font-semibold text-black mt-4">
-            Sign up to continue
-          </h2>
-
-          <form
-            className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2"
-            onSubmit={handleSubmit}
-          >
-            {/* Input Fields */}
-            <div className="flex items-center bg-white rounded-full p-2">
-              <img className="w-5 h-5 mx-2" alt="User" src={user1} />
-              <input
-                type="text"
-                placeholder="First Name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                className="w-full border-none outline-none text-base sm:text-lg p-2"
-              />
-            </div>
-            <div className="flex items-center bg-white rounded-full p-2">
-              <img className="w-5 h-5 mx-2" alt="User" src={user2} />
-              <input
-                type="text"
-                placeholder="Last Name"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                className="w-full border-none outline-none text-base sm:text-lg p-2"
-              />
-            </div>
-            <div className="flex items-center bg-white rounded-full p-2">
-              <img className="w-5 h-5 mx-2" alt="Email" src={email2} />
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full border-none outline-none text-base sm:text-lg p-2"
-              />
-            </div>
-            <div className="flex items-center bg-white rounded-full p-2">
-              <img className="w-5 h-5 mx-2" alt="Phone" src={telephone1} />
-              <input
-                type="text"
-                placeholder="Phone Number"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                className="w-full border-none outline-none text-base sm:text-lg p-2"
-              />
-            </div>
-
-            {/* Password Fields */}
-            <div className="flex items-center bg-white rounded-full p-2 relative">
-              <img className="w-5 h-5 mx-2" alt="Lock" src={lock1} />
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Enter Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full border-none outline-none text-base sm:text-lg p-2"
-              />
-              <img
-                className="w-5 h-5 cursor-pointer absolute right-3"
-                alt="Hide"
-                src={showPassword ? hide2 : hide1}
-                onClick={togglePasswordVisibility}
-              />
-            </div>
-            <div className="flex items-center bg-white rounded-full p-2 relative">
-              <img className="w-5 h-5 mx-2" alt="Lock" src={lock1} />
-              <input
-                type={showConfirmPassword ? "text" : "password"}
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full border-none outline-none text-base sm:text-lg p-2"
-              />
-              <img
-                className="w-5 h-5 cursor-pointer absolute right-3"
-                alt="Hide"
-                src={showConfirmPassword ? hide2 : hide1}
-                onClick={toggleConfirmPasswordVisibility}
-              />
-            </div>
-          </form>
-
-          {/* Submit Button */}
-          <div className="flex justify-center mt-8">
-            <button
-              type="submit"
-              className="bg-[#294180] text-white py-2 px-6 sm:px-8 rounded-full text-sm sm:text-lg font-medium"
-              onClick={handleSubmit}
-            >
-              Submit
-            </button>
+          <div className="absolute w-[131px] top-[30px] left-[89px] [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-[#265073] text-2xl tracking-[0] leading-[normal] cursor-pointer">
+            PagePlay
           </div>
 
-          {/* Already Have Account */}
-          <p className="text-center mt-4 text-sm sm:text-base">
-            Already have an account?{" "}
-            <span
-              className="text-[#265073] cursor-pointer"
-              onClick={handleSignIn}
-            >
-              Sign in
-            </span>
-          </p>
+          <div className="absolute w-[1532px] h-[750px] top-[7px] left-0">
+            <div className="absolute w-[912px] h-[516px] top-[108px] left-[312px] bg-[#a4c0ed] rounded-[13px] overflow-hidden">
+              <div className="absolute w-full  top-[22px] text-center [font-family:'Poppins-Bold',Helvetica] font-bold text-black text-3xl tracking-[0] leading-[normal] whitespace-nowrap">
+                Welcome to PagePlay
+              </div>
 
-          {/* Decorative Images */}
-          <img
-              className="absolute hidden lg:block w-[412px] h-[356px] top-[335px] left-[1120px]"
+              <div className="absolute w-full top-16 text-center [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-black text-2xl tracking-[0] leading-[normal]">
+                Sign up to continue
+              </div>
+
+              <div className="absolute w-full h-[230px] top-[286px] left-0">
+                <div className="absolute w-full h-[230px] top-0 left-0">
+                  <div className="absolute w-[100px] h-10 top-[115px] bg-[#294180] left-[410px] rounded-[50px]">
+                    <div
+                      className="text-center [font-family:'Poppins-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-[normal] cursor-pointer h-[40px] pt-[10px]"
+                      onClick={handleSubmit}
+                    >
+                      Submit
+                    </div>
+                  </div>
+
+                  <p className="absolute w-full top-[178px] text-center [font-family:'Poppins-Medium',Helvetica] font-medium text-transparent text-base tracking-[0] leading-[normal]">
+                    <span className="text-black">
+                      Already have an account?{" "}
+                    </span>
+
+                    <span
+                      className="text-[#265073] cursor-pointer"
+                      onClick={handleSignIn}
+                    >
+                      Sign in
+                    </span>
+                  </p>
+                  {/* password */}
+                  <div className="absolute w-[458px] h-[230px] top-0 left-0">
+                    <div className="absolute w-[318px] h-[54px] top-[37px] left-[110px] bg-white rounded-[40px] overflow-hidden">
+                      <div className="absolute top-3 left-[70px] [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-base tracking-[0] leading-[normal]"></div>
+
+                      <img
+                        className="absolute w-[17px] h-[21px] top-[13px] left-6 object-cover"
+                        alt="Lock"
+                        src={lock1}
+                      />
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        placeholder="Enter Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="absolute top-[10px] left-[81px] w-[400px] border-none outline-none font-medium text-black text-lg pr-10"
+                      />
+                      <img
+                        className="absolute w-7 h-[19px] top-[15px] right-[26px] cursor-pointer object-cover"
+                        alt="Hide"
+                        src={showPassword ? hide2 : hide1}
+                        onClick={togglePasswordVisibility}
+                      />
+                    </div>
+
+                    <img
+                      className="absolute w-[210px] h-[230px] top-0 left-0 object-cover"
+                      alt="Element"
+                      src={x2412205167789441}
+                    />
+                  </div>
+                </div>
+                {/* confirm password */}
+                <div className="absolute w-[318px] h-[54px] top-[37px] left-[495px] bg-white rounded-[40px] overflow-hidden">
+                  <div className="absolute top-3.5 left-[67px] [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-base tracking-[0] leading-[normal]"></div>
+
+                  <img
+                    className="absolute w-[17px] h-[21px] top-[13px] left-6 object-cover"
+                    alt="Lock"
+                    src={lock1}
+                  />
+                  <input
+                    type={showConfirmPassword ? "text" : "Password"}
+                    placeholder="Confirm Password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    className="absolute top-[10px] left-[81px] w-[400px] border-none outline-none font-medium text-black text-lg pr-10"
+                  />
+                  <img
+                    className="absolute w-7 h-[19px] top-[15px] right-[26px] cursor-pointer object-cover"
+                    alt="Hide"
+                    src={showConfirmPassword ? hide2 : hide1}
+                    onClick={toggleConfirmPasswordVisibility}
+                  />
+                </div>
+              </div>
+              {/* Phone Number filed */}
+              <div className="absolute w-[318px] h-[55px] top-[231px] left-[495px] bg-white rounded-[40px] overflow-hidden">
+                <div className="absolute top-[13px] left-[68px] [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-base tracking-[0] leading-[normal]"></div>
+                <img
+                  className="absolute w-[22px] h-[22px] top-4 left-[19px] object-cover"
+                  alt="Telephone"
+                  src={telephone1}
+                />
+                <input
+                  type={phoneNumber ? "text" : "Phone Number"}
+                  placeholder="Phone Number"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  className="absolute top-[10px] left-[81px] w-[400px] border-none outline-none font-medium text-black text-lg pr-10"
+                />
+              </div>
+              {/* Email */}
+              <div className="absolute w-[318px] h-[55px] top-[231px] left-[110px] bg-white rounded-[40px] overflow-hidden">
+                <div className="absolute top-[13px] left-[71px] [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-base tracking-[0] leading-[normal]"></div>
+                <img
+                  className="absolute w-[22px] h-[22px] top-4 left-[18px] object-cover"
+                  alt="Email"
+                  src={email2}
+                />
+                <input
+                  type={email ? "text" : "Email"}
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="absolute top-[10px] left-[81px] w-[400px] border-none outline-none font-medium text-black text-lg pr-10"
+                />
+              </div>
+              {/* Last Name */}
+              <div className="absolute w-[318px] h-[54px] top-[140px] left-[495px] bg-white rounded-[40px] overflow-hidden">
+                <img
+                  className="left-4 absolute w-[22px] h-[22px] top-[15px] object-cover"
+                  alt="User"
+                  src={user2}
+                />
+                <input
+                  type={lastName ? "text" : "Last Name"}
+                  placeholder="Last Name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  className="absolute top-[10px] left-[81px] w-[400px] border-none outline-none font-medium text-black text-lg pr-10"
+                />
+              </div>
+              {/* First Name */}
+              <div className="absolute w-[318px] h-[54px] top-[140px] left-[110px] bg-white rounded-[40px] overflow-hidden">
+                <img
+                  className="left-[18px] absolute w-[22px] h-[22px] top-[15px] object-cover"
+                  alt="User"
+                  src={user1}
+                />
+                <input
+                  type={firstName ? "text" : "First Name"}
+                  placeholder="First Name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  className="absolute top-[10px] left-[81px] w-[400px] border-none outline-none font-medium text-black text-lg pr-10"
+                />
+              </div>
+            </div>
+
+            <img
+              className="absolute w-[412px] h-[356px] top-[394px] left-[1120px]"
               alt="Group"
               src={group15}
             />
 
             <img
-              className="absolute hidden lg:block w-[225px] h-[330px] top-0 left-[1025px] object-cover"
+              className="absolute w-[245px] h-[346px] top-0 left-[1036px] object-cover"
               alt="Element"
               src={x2412205069043541}
             />
             <img
               style={{ left: "-50px" }}
-              className="absolute hidden lg:block w-[400px] h-[265px] top-[428px] left-0"
+              className="absolute w-[373px] h-[265px] top-[485px] left-0"
               alt="Element"
               src={x100289701}
             />
+          </div>
         </div>
       </div>
     </div>

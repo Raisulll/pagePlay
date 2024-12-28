@@ -27,6 +27,15 @@ export const Login = () => {
       <div className="bg-[#d4e0b4] w-[1535px] h-[768px]">
         <div className="relative w-[1532px] h-28 top-[11px]">
           <div className="absolute w-[1532px] h-[750px] top-[7px] left-0">
+            <img
+              className="absolute w-[76px] h-[90px] top-0 left-[13px] object-cover"
+              alt="Logo"
+              src={logo}
+            />
+
+            <div className="absolute w-[131px] top-[30px] left-[89px] [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-[#265073] text-2xl tracking-[0] leading-[normal] cursor-pointer">
+              PagePlay
+            </div>
             <div className="absolute w-[912px] h-[516px] top-[108px] left-[312px] bg-[#a4c0ed] rounded-[13px] overflow-hidden">
               <div className="absolute w-full text-center top-[65px] font-bold text-black text-4xl">
                 Welcome Back

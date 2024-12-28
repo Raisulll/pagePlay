@@ -29,7 +29,9 @@ function AppContent() {
 
   return (
     <>
-      <Nav />
+      {location.pathname !== "/login" && location.pathname !== "/signup" && (
+        <Nav />
+      )}
 
       <main>
         <Routes>
