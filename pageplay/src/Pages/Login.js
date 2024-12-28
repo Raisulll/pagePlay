@@ -26,33 +26,6 @@ export const Login = () => {
     <div className="bg-[#d4e0b4] flex flex-row justify-center w-full">
       <div className="bg-[#d4e0b4] w-[1535px] h-[768px]">
         <div className="relative w-[1532px] h-28 top-[11px]">
-          {/* <img
-            className="absolute w-[76px] h-[90px] top-2.5 left-4 object-cover"
-            alt="Book"
-            src={logo}
-          /> */}
-
-          {/* <div className="absolute w-[131px] top-[35px] left-[92px] [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-[#265073] text-2xl tracking-[0] leading-[normal]">
-            PagePlay
-          </div> */}
-
-          {/* <img
-            className="absolute w-[54px] h-[53px] top-[29px] left-[1438px] object-cover cursor-pointer"
-            alt="User signin"
-            src={userSignin1}
-            onClick={() => {
-              navigate("/signup");
-            }}
-          /> */}
-          {/* <div
-            className="absolute top-[38px] left-[1319px] [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-black text-[22px] tracking-[0] leading-[normal] cursor-pointer"
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            Log in
-          </div> */}
-
           <div className="absolute w-[1532px] h-[750px] top-[7px] left-0">
             <div className="absolute w-[912px] h-[516px] top-[108px] left-[312px] bg-[#a4c0ed] rounded-[13px] overflow-hidden">
               <div className="absolute w-full text-center top-[65px] font-bold text-black text-4xl">
