@@ -22,14 +22,15 @@ const Nav = () => {
         <span className="font-semibold text-[#265073] text-xl">PagePlay</span>
       </div>
 
-      {/* Search Section */}
       <form className="searchForm flex items-center">
+        {/* Hidden on small screens */}
         <input
-          className="h-10 bg-[#ffffff] w-[400px] px-4 rounded-l-md border-l-2 border-t-2 border-b-2 border-blue-400"
+          className="h-10 bg-[#ffffff] w-[400px] px-4 rounded-l-md border-l-2 border-t-2 border-b-2 border-blue-400 hidden md:block"
           type="search"
           placeholder="Search Book..."
           autoComplete="off"
         />
+        {/* Always visible search button */}
         <button
           className="h-10 bg-green-500 w-14 grid place-items-center rounded-r-md border-r-2 border-t-2 border-b-2 border-blue-400"
           type="submit"
