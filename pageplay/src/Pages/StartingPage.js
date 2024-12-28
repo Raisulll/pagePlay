@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import aiImage from "../assets/images/ai-image.svg";
 import book1 from "../assets/images/book.png";
 import userSignin1 from "../assets/images/user-signin-1.png";
+import searchImg from "../assets/images/search.png";
 
 export const StartingPage = () => {
   const navigate = useNavigate();
@@ -16,21 +17,31 @@ export const StartingPage = () => {
 
   return (
     <div className="bg-[#d4e0b4] min-h-screen">
+
+      {/* navigate */}
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center space-x-2">
           <img className="w-12 h-12 object-cover" alt="Book" src={book1} />
           <span className="font-semibold text-[#265073] text-xl">PagePlay</span>
         </div>
+        <form className="searchForm flex items-center">
+        <input class="h-10 bg-[#ffffff] w-[400px] px-4 rounded-l-md border-l-2 border-t-2 border-b-2 border-blue-400" type="search" placeholder="Search Book..." autocomplete="off">
+        </input>
+        <button class="h-10 bg-green-500 w-14 grid place-items-center rounded-r-md border-r-2 border-t-2 border-b-2 border-blue-400" type="submit">
+            <img className="w-6 h-6" src={searchImg} alt="Search Icon" />
+        </button>
+        </form>
 
         <div className="flex items-center space-x-6">
           <div
             className="font-semibold text-black text-sm lg:text-lg cursor-pointer"
-            onClick={handleLoginClick}
           >
-            Log in
-          </div>
-          <div className="font-semibold text-black text-sm lg:text-lg">
             About Us
+          </div>
+          <div className="font-semibold text-black text-sm lg:text-lg cursor-pointer"
+          onClick={handleLoginClick}
+          >
+            Login
           </div>
           <img
             className="w-10 h-10 object-cover cursor-pointer ring-2 rounded-full"
