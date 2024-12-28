@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import {
-  BrowserRouter as Router,
   Route,
+  BrowserRouter as Router,
   Routes,
   useLocation,
 } from "react-router-dom";
 import "./App.css";
 
+import ForgotPass from "./Pages/ForgotPass";
 import Login from "./Pages/Login";
+import Otp from "./Pages/Otp";
 import SignUp from "./Pages/SignUp";
 import StartingPage from "./Pages/StartingPage";
-import ForgotPass from "./Pages/ForgotPass";
-import Otp from "./Pages/Otp";
-import Nav from "./Components/Nav.js";
 
 function App() {
   const [user, setUser] = useState(localStorage.getItem("user"));
@@ -29,10 +28,6 @@ function AppContent() {
 
   return (
     <>
-      {location.pathname !== "/login" && location.pathname !== "/signup" && (
-        <Nav />
-      )}
-
       <main>
         <Routes>
           <Route path="/" element={<StartingPage />} />
