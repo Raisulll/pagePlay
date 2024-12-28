@@ -4,16 +4,10 @@ import aiImage from "../assets/images/ai-image.svg";
 import book1 from "../assets/images/book.png";
 import userSignin1 from "../assets/images/user-signin-1.png";
 import searchImg from "../assets/images/search.png";
+import { Nav } from "../Components/Nav.js";
 
 export const StartingPage = () => {
   const navigate = useNavigate();
-
-  const handleLoginClick = () => {
-    navigate("/login");
-  };
-  const handleSignupClick = () => {
-    navigate("/signup");
-  };
 
   return (
     <div className="bg-[#d4e0b4] min-h-screen">
