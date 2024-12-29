@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+import "./App.css";
+
+import ForgotPass from "./Pages/ForgotPass";
+import Login from "./Pages/Login";
+import Otp from "./Pages/Otp";
+import SignUp from "./Pages/SignUp";
+import StartingPage from "./Pages/StartingPage";
 
 function App() {
+  const [user, setUser] = useState(localStorage.getItem("user"));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+
+  return (
+    <>
+      <main>
+        <Routes>
+          <Route path="/" element={<StartingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/forgot-password" element={<ForgotPass />} />
+          <Route path="/otp" element={<Otp />} />
+        </Routes>
+      </main>
+    </>
   );
 }
 
