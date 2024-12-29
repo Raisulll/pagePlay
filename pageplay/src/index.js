@@ -3,15 +3,30 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Login } from './Publisherlogin';
+import { Home } from './HomePublisher';
+import { RequestedBooklist } from './RequestedBooklistPublisher';
+import { Booklist } from './BooklistPublisher';
+import { Transaction } from './TransactionPublisher';
+import { PublisherProfile } from './PublisherProfile';
+import { AddBook } from './AddBookPublisher';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/requested-books" element={<RequestedBooklist />} />
+        <Route path="/booklist" element={<Booklist />} />
+        <Route path="/transactions" element={<Transaction />} />
+        <Route path="/profile" element={<PublisherProfile />} />
+        <Route path="/add-book" element={<AddBook />} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
